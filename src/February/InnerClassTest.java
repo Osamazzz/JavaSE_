@@ -4,6 +4,7 @@ public class InnerClassTest {
     public static void main(String[] args) {
         OuterClass outerClass = new OuterClass();
         outerClass.f1();
+        //输出地址
         System.out.println(outerClass);
     }
 }

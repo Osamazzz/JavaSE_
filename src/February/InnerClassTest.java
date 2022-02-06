@@ -4,7 +4,7 @@ public class InnerClassTest {
     public static void main(String[] args) {
         OuterClass outerClass = new OuterClass();
         outerClass.f1();
-        //输出地址
+        //输出地址哈希值
         System.out.println(outerClass);
     }
 }

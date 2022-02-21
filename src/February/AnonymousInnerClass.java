@@ -25,9 +25,10 @@ class Outer04 {
         //tiger编译类型为IA接口
         //运行类型为这个匿名内部类Outer04$1
         IA tiger = new IA() {
+            int abc = 10;
             @Override
             public void cry() {
-                System.out.println("cry!!");
+                System.out.println("cry!!" + abc);
             }
         };
         System.out.println("运行类型为：" + tiger.getClass());

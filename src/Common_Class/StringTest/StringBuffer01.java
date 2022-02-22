@@ -27,5 +27,4 @@ public class StringBuffer01 {
         String s = sb4.toString();//toString来返回一个字符串
         System.out.println(s);
     }
-
 }

@@ -14,6 +14,8 @@ public class ArrayListTest01 {
         ArrayList arrayList = new ArrayList();
         arrayList.add(null);
         arrayList.add("tom");
+        arrayList.add(1,"zzz");//还可以在指定位置添加
+        System.out.println(arrayList);
         System.out.println(arrayList.size());
 //        ArrayList中维护了一个Object类型的数组elementData
 //        transient Object[] elementData;transient 表示短暂瞬间的，该属性不会被序列化

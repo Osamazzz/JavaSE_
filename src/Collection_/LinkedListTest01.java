@@ -52,8 +52,8 @@ public class LinkedListTest01 {
         }
         //在tom和abc之间添加结点
         Node smith = new Node("smith");
-        smith.next = abc;
-        smith.pre = tom;
+        smith.next = tom.next;//abc
+        smith.pre = abc.pre;//tom
         abc.pre = smith;
         tom.next = smith;
         System.out.println("==================");

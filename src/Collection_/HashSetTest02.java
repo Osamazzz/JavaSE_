@@ -27,5 +27,6 @@ public class HashSetTest02 {
         // 只满足元素个数>=TREEIFY_THRESHOLD，则先会对table进行扩容，
         // 直到table大小>=64,才会进行树化
         // 否则仍然采用数组扩容机制
+        // 结点的key用来存放数据，value则是固定的对象(系统初始化)
     }
 }

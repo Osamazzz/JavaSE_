@@ -28,6 +28,16 @@ public class Generic02 {
 //                return s;
 //            }
 //        }
+        // 在给泛型指定类型后，可以传入该类型或者该类型的子类
+        Animal<A> aAnimal = new Animal<>(new A());
+        Animal<B> bAnimal = new Animal<>(new B());
+        System.out.println(aAnimal.getClass());
+        System.out.println(bAnimal.getClass());
+        aAnimal.f();
+        bAnimal.f();
+        // 如果按下面这么写，就默认是Object类型
+        Animal animal = new Animal(new Object());
+//      相当于Animal<Object> objectAnimal = new Animal<Object>(new Object());
     }
 }
 // 可以在类声明时通过一个标识表示某个类中的某个属性的类型
@@ -43,3 +53,6 @@ class Animal<E> {
         return s;
     }
 }
+
+class A {}
+class B extends A {}

@@ -1,5 +1,7 @@
 package DS.Array_andString_;
 
+
+
 /**
  * @author Obamazzz
  * @version 1.0
@@ -14,6 +16,7 @@ public class BinaryInsertSearch {
     }
 }
 class Solution03 {
+
     public int searchInsert(int[] nums, int target) {
         // 二分法
         int low = 0, high = nums.length - 1;

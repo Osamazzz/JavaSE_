@@ -1,5 +1,7 @@
 package DS.Stack_andQueue_;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,17 +14,20 @@ public class QueueTest {
         MyQueue q = new MyQueue();
         q.enQueue(5);
         q.enQueue(3);
-        if (q.isEmpty() == false) {
+        if (!q.isEmpty()) {
             System.out.println(q.Front());
         }
         q.deQueue();
-        if (q.isEmpty() == false) {
+        if (!q.isEmpty()) {
             System.out.println(q.Front());
         }
         q.deQueue();
-        if (q.isEmpty() == false) {
+        if (!q.isEmpty()) {
             System.out.println(q.Front());
         }
+    }
+    public static void f1() {
+        System.out.println("123");
     }
 }
 
@@ -39,7 +44,7 @@ class MyQueue {
     public boolean enQueue(int x) {
         data.add(x);
         return true;
-    };
+    }
     /** Delete an element from the queue. Return true if the operation is successful. */
     public boolean deQueue() {
         if (isEmpty() == true) {

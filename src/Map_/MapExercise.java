@@ -1,5 +1,7 @@
 package Map_;
 
+import org.junit.Test;
+
 import java.util.*;
 
 /**
@@ -35,6 +37,10 @@ public class MapExercise {
                 System.out.println(entry.getKey() + "-" + entry.getValue());
             }
         }
+    }
+    @Test
+    public void f1() {
+        System.out.println("123");
     }
 }
 

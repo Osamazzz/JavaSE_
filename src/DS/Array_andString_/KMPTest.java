@@ -63,7 +63,7 @@ public class KMPTest {
         int[] next = new int[len];
         next[j] = k;
         while (j < len - 1) {
-            //p[k]表示前缀，p[j]表示后缀
+            //tt[k]表示前缀，tt[j]表示后缀
             if (k == -1 || tt[j] == tt[k]) {
                 next[++j] = ++k;
             } else k = next[k];

@@ -96,7 +96,7 @@ class Sell03 implements Runnable {
     //使用synchronized关键字
     private static int ticketNum = 100;
     private boolean flag = true;
-    // 同步方法，这时互斥锁在this对象上
+    //同步方法，这时互斥锁在this对象上
     public synchronized void m1() {//同一时刻只能有一个线程执行这个方法
         if (ticketNum <= 0) {
             System.out.println("卖光了...");
@@ -115,7 +115,7 @@ class Sell03 implements Runnable {
     public void m2() {
         // 同步代码块
         // 要保证这个this对象是大家共享的对象，所以使用runnable实现更好
-        synchronized (this) {
+        synchronized (this) {//这个锁是非公平锁
             if (ticketNum <= 0) {
                 System.out.println("卖光了...");
                 flag = false;//退出循环
@@ -153,7 +153,7 @@ class Sell03 implements Runnable {
     }
     @Override
     public void run() {//同步方法,同一时刻只能有一个线程来执行方法
-        while (ticketNum >= 0) {
+        while (flag) {
             m1();
         }
     }

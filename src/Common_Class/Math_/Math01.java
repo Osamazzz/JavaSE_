@@ -17,7 +17,7 @@ public class Math01 {
         System.out.println(Math.random());//随机数0<= x <1
         for (int i = 0; i < 10; i++) {
 //            返回2-7随机整数
-            int j = 2 + (int) ((5+1) * Math.random());
+            int j = 2 + (int) ((5 + 1) * Math.random());
             System.out.print(j + " ");
         }
         System.out.println();

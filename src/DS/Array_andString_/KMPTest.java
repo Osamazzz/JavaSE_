@@ -5,7 +5,17 @@ package DS.Array_andString_;
  * @version 1.0
  */
 public class KMPTest {
-    static int ViolentMatch(String s, String p) {
+    public static void main(String[] args) {
+        String s = "BBCABCDABABCDABCDABDE";
+        String t = "ABCDABD";
+        int index = KMP(s, t);
+        System.out.println("index =" + index);
+        index = ViolentMatch(s, t);
+        System.out.println("index =" + index);
+
+    }
+
+    public static int ViolentMatch(String s, String p) {
         //暴力匹配算法
         char[] ss = s.toCharArray();
         char[] pp = p.toCharArray();
@@ -37,7 +47,7 @@ public class KMPTest {
      * @param t 模式串
      * @return s匹配到t的起始下标
      */
-    static int KMP(String s, String t) {
+    public static int KMP(String s, String t) {
         char[] ss = s.toCharArray();
         char[] tt = t.toCharArray();
         int[] next = getNext(tt);
@@ -57,16 +67,18 @@ public class KMPTest {
      * @param tt 模式串
      * @return 获取t的next数组, next[i]代表t中下标i之前的字符串的最大公共前后缀的长度
      */
-    static int[] getNext(char[] tt) {
+    public static int[] getNext(char[] tt) {
         int j = 0, k = -1;
         int len = tt.length;
         int[] next = new int[len];
         next[j] = k;
+        //len-1次即可找到next数组最后一个数
         while (j < len - 1) {
             //tt[k]表示前缀，tt[j]表示后缀
             if (k == -1 || tt[j] == tt[k]) {
                 next[++j] = ++k;
-            } else k = next[k];
+            } else
+                k = next[k];//比较next[next[k]]与next[j]是否相等
         }
         return next;
     }

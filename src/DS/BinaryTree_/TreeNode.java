@@ -1,5 +1,7 @@
 package DS.BinaryTree_;
 
+import java.util.*;
+
 /**
  * @author Obamazzz
  * @version 1.0
@@ -9,46 +11,66 @@ public class TreeNode {
     TreeNode left;
     TreeNode right;
 
-    TreeNode() {
+    public TreeNode() {
 
     }
 
-    TreeNode(int val) {
+    public TreeNode(int val) {
         this.val = val;
     }
 
-    TreeNode(int val, TreeNode left, TreeNode right) {
+    public TreeNode(int val, TreeNode left, TreeNode right) {
         this.val = val;
         this.left = left;
         this.right = right;
     }
 
-    public int answer;        // don't forget to initialize answer before call maximum_depth
-    // 找到二叉树的最大深度->前序遍历
-    public void maximum_depth(TreeNode root, int depth) {
-        if (root == null) {
-            return;
+    //层次构造二叉树
+    public TreeNode createBinaryTree(ArrayList<Integer> arrayList) {
+        if (arrayList.size() == 0 || arrayList.get(0) == null) {
+            return null;
         }
-        if (root.left == null && root.right == null) {
-            answer = Math.max(answer, depth);// 相当于return
+        // LinkedList实现队列
+        TreeNode root = new TreeNode(arrayList.remove(0));
+        Queue<TreeNode> queue = new LinkedList<>();
+        //先将根节点放入队列
+        queue.offer(root);
+        while (arrayList.size() > 0) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode temp = queue.poll();
+                Integer leftValue = null;
+                if (arrayList.size() != 0) {
+                    leftValue = arrayList.remove(0);
+                }
+                if (leftValue != null) {
+                    temp.left = new TreeNode(leftValue);
+                    queue.offer(temp.left);//加入队列
+                }
+                Integer rightValue = null;
+                if (arrayList.size() != 0) {
+                    rightValue = arrayList.remove(0);
+                }
+                if (rightValue != null) {
+                    temp.right = new TreeNode(rightValue);
+                    queue.offer(temp.right);//加入队列
+                }
+            }
         }
-        maximum_depth(root.left, depth + 1);
-        maximum_depth(root.right, depth + 1);
-    }
-    // 找到二叉树的最大深度->后序遍历
-    public int maximum_depth(TreeNode root) {
-        if (root == null) {
-            return 0;                                   // return 0 for null node
-        }
-        int left_depth = maximum_depth(root.left);
-        int right_depth = maximum_depth(root.right);
-        return Math.max(left_depth, right_depth) + 1;	// return depth of the subtree rooted at root
+        return root;
     }
 }
+
 class Test {
     public static void main(String[] args) {
-        TreeNode root = new TreeNode();
-        root.maximum_depth(root, 0);
-        System.out.println(root.answer);
+        Integer[] arr = new Integer[]{3, 9, 20, 8, null, 9, 15, 8, null, 9, 10};
+        ArrayList<Integer> arrayList = new ArrayList<>(Arrays.asList(arr));
+        TreeNode tree = new TreeNode();
+        TreeNode root = tree.createBinaryTree(arrayList);
+        FindBinaryTreeDepthTest test = new FindBinaryTreeDepthTest();
+        System.out.println(test.maxDepth(root));
+        LevelOrderTest test1 = new LevelOrderTest();
+        List<List<Integer>> res = test1.levelOrder(root);
+        System.out.println(res);
     }
 }

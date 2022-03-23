@@ -15,6 +15,7 @@ public class ArrayListTest01 {
         arrayList.add(null);
         arrayList.add("tom");
         arrayList.add(1,"zzz");//还可以在指定位置添加
+
         System.out.println(arrayList);
         System.out.println(arrayList.size());
 //        ArrayList中维护了一个Object类型的数组elementData

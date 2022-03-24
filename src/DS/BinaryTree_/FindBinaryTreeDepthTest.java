@@ -29,7 +29,7 @@ public class FindBinaryTreeDepthTest {
         }
         //叶子结点
         if (root.left == null && root.right == null) {
-            ans =  Math.max(ans,depth);
+            ans =  Math.max(ans,depth);//更新结果
         }
         maxDepth(root.left,depth+1);
         maxDepth(root.right,depth+1);

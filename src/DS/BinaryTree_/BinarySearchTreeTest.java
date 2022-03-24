@@ -30,14 +30,14 @@ public class BinarySearchTreeTest {
         if (root == null)
             return true;
         //访问左子树
-        if (!isValidBST(root.left))
+        if (!isValidBST_MiddleOrderTraversal(root.left))
             return false;
         //访问当前节点：如果当前节点小于等于中序遍历的前一个节点直接返回false。
         if (prev != null && prev.val >= root.val)
             return false;
         prev = root;
         //访问右子树
-        if (!isValidBST(root.right))
+        if (!isValidBST_MiddleOrderTraversal(root.right))
             return false;
         return true;
     }
@@ -51,9 +51,9 @@ public class BinarySearchTreeTest {
 
         if (root.val == val) {
             return root;
-        } else if (root.val > val) {
+        } else if (root.val > val) {//如果要找的值小于当前结点值，去左子树寻找
             return searchBST1(root.left, val);
-        } else {
+        } else {//如果要找的值大于当前结点值，去右子树寻找
             return searchBST1(root.right, val);
         }
     }
@@ -88,6 +88,7 @@ public class BinarySearchTreeTest {
     }
 
     TreeNode prevRoot;
+
     //迭代
     public TreeNode insertIntoBST2(TreeNode root, int val) {
         if (root == null) {
@@ -96,13 +97,13 @@ public class BinarySearchTreeTest {
         TreeNode res = root;
         TreeNode node = new TreeNode(val);
         while (true) {
-            if (val < root.val){
-                if (root.left == null){
+            if (val < root.val) {
+                if (root.left == null) {
                     root.left = node;
                     break;
                 }
                 root = root.left;
-            }else if (val > root.val) {
+            } else if (val > root.val) {
                 if (root.right == null) {
                     root.right = node;
                     break;

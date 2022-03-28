@@ -8,9 +8,6 @@ import java.util.List;
  * @version 1.0
  */
 public class BinaryTreeTraversal {
-    public static void main(String[] args) {
-
-    }
 
     //前序遍历
     public List<Integer> preorderTraversal(TreeNode root) {

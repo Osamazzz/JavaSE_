@@ -1,4 +1,4 @@
-package LeetCode_;
+package LeetCode_.LinkList;
 
 /**
  * @author Obamazzz

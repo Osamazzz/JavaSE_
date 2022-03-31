@@ -49,6 +49,32 @@ public class levelOrderTest {
         }
         return res;
     }
+    public List<List<Integer>> levelOrder2(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        if (root == null) return res;
+        Queue<TreeNode> queue = new LinkedList<>();
+        //添加根节点
+        queue.offer(root);
+        //如果队列中还有元素的话
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            List<Integer> temp = new ArrayList<>();
+            //遍历队列并让队列元素出列
+            for (int i = 0; i < size; i++) {
+                TreeNode cur = queue.poll();
+                temp.add(cur.val);
+                //以下顺序不能变
+                if (cur.left != null) {
+                    queue.offer(cur.left);
+                }
+                if (cur.right != null) {
+                    queue.offer(cur.right);
+                }
+            }
+            res.add(temp);
+        }
+        return res;
+    }
     public class TreeNode {
       int val;
       TreeNode left;

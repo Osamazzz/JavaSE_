@@ -7,9 +7,9 @@ import java.util.*;
  * @version 1.0
  */
 public class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
+    public int val;
+    public TreeNode left;
+    public TreeNode right;
 
     public TreeNode() {
 

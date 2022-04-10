@@ -16,10 +16,12 @@ public class DateTest01 {
         // 这里的格式使用的字母已经规定好，不能随便使用
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss E");
         SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy年MM月dd日 hh:mm:ss a E");
+        SimpleDateFormat sdf3 = new SimpleDateFormat("HH:mm:ss");
         String formatDate = sdf.format(d1);
         System.out.println(formatDate);
         System.out.println(sdf2.format(d1));
 
+        System.out.println();
         //通过指定毫秒获得时间
         Date d2 = new Date(921245454);
         System.out.println(d2);
@@ -30,5 +32,6 @@ public class DateTest01 {
         Date parseDate = sdf.parse(s);
         System.out.println(parseDate);
         System.out.println(sdf.format(parseDate));
+        System.out.println(sdf3.format(d2));
     }
 }

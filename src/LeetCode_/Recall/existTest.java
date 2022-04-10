@@ -30,7 +30,7 @@ public class existTest {
         //往四个方向搜索,只要有一个方向成功就行
         boolean res = dfs(board, word, i + 1, j, k + 1) || dfs(board, word, i - 1, j, k + 1)
                    || dfs(board, word, i , j + 1, k + 1) || dfs(board, word, i, j - 1, k + 1);
-        //还原字符
+        //还原字符,回溯
         board[i][j] = word[k];
         return res;
     }

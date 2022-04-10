@@ -21,6 +21,8 @@ public class LocalDateTest01 {
         System.out.println(ldt.getMonth());//英语的月份表示
         System.out.println(ldt.getMonthValue());//数字的月份表示
 
+        System.out.println();
+
         LocalDate localDate = LocalDate.now();
         System.out.println(localDate);//日期
         LocalTime localTime = LocalTime.now();
@@ -31,6 +33,7 @@ public class LocalDateTest01 {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern(formatStr);
         String formatStr2 = dtf.format(ldt);
         System.out.println("格式化后的日期:"+formatStr2);
+        System.out.println();
         //时间戳Instant,类似于Date类
         Instant instant = Instant.now();
         System.out.println(instant);

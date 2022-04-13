@@ -12,12 +12,12 @@ import java.util.List;
 public class mergeTwoListsTest {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode dum = new ListNode(0), cur = dum;
-        while(l1 != null && l2 != null) {
-            if(l1.val < l2.val) {
+        //当l1和l2都被取光时退出循环
+        while (l1 != null && l2 != null) {
+            if (l1.val < l2.val) {
                 cur.next = l1;
                 l1 = l1.next;
-            }
-            else {
+            } else {
                 cur.next = l2;
                 l2 = l2.next;
             }

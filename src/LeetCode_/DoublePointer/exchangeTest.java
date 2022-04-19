@@ -30,11 +30,11 @@ public class exchangeTest {
         return res;
     }
 
-    //类似快排的思想
+    //类似快排的思想->双指针
     public int[] exchange2(int[] nums) {
         int i = 0, j = nums.length - 1;//i为奇数指针，j为偶数指针
         while (i < j) {
-            while (i < j && (nums[i] & 1) == 1) i++;
+            while (i < j && (nums[i] & 1) == 1) i++;//& 为按位与
             while (i < j && (nums[j] & 1) == 0) j--;
             swap(nums, i, j);
         }
@@ -46,4 +46,5 @@ public class exchangeTest {
         nums[i] = nums[j];
         nums[j] = temp;
     }
+
 }

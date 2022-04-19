@@ -29,6 +29,7 @@ public class MirrorTree {
         if(root == null) return null;
         Stack<TreeNode> stack = new Stack<>();
         stack.add(root);
+        //模拟递归栈
         while(!stack.isEmpty()) {
             TreeNode node = stack.pop();
             if(node.left != null) stack.add(node.left);

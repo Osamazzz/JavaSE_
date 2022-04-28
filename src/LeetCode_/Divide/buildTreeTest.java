@@ -22,15 +22,18 @@ public class buildTreeTest {
         }
         return divide(0, 0, inorder.length - 1);
     }
-    public TreeNode divide(int rootValue, int left, int right) {
+    public TreeNode divide(int rootIndex, int left, int right) {
         //如果左边界大于右边界，那么递归结束
         if (left > right)
             return null;
-        TreeNode root = new TreeNode(preorder[rootValue]);
+        //根据根节点值创建二叉树节点
+        TreeNode root = new TreeNode(preorder[rootIndex]);
         //获取根节点值在中序遍历中的索引
-        int index = map.get(preorder[rootValue]);
-        root.left = divide(rootValue + 1, left, index - 1);
-        root.right = divide(index - left + rootValue + 1, index + 1, right);
+        int index = map.get(preorder[rootIndex]);
+        //由于中序遍历序列为左根右，因此将其分为两部分
+        root.left = divide(rootIndex + 1, left, index - 1);
+//        根节点索引 + 左子树长度 + 1
+        root.right = divide(rootIndex + index - left + 1, index + 1, right);
         return root;
     }
 

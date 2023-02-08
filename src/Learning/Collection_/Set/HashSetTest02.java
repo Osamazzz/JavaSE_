@@ -6,6 +6,7 @@ import java.util.HashSet;
  * @author Obamazzz
  * @version 1.0
  */
+@SuppressWarnings("ALL")
 public class HashSetTest02 {
     public static void main(String[] args) {
         // 第一次添加时table数组扩容到16,

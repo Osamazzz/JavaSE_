@@ -9,14 +9,13 @@ package Learning.February;
 public class EnumTest {
     public static void main(String[] args) {
         System.out.println(Season.AUTUMN);
+
         System.out.println(Season02.SPRING);//调用父类Enum的toString方法
-//        public String toString() {
-//            return name;
-//        }
         System.out.println(Season.SPRING);
 
     }
 }
+
 //自定义枚举类
 class Season {
     private String name;
@@ -60,7 +59,7 @@ enum Season02 {
     private String desc;//描述
 
     //private可以省略，枚举类构造器默认是私有的
-    private Season02(String name, String desc) {
+    Season02(String name, String desc) {
         this.name = name;
         this.desc = desc;
     }
@@ -73,4 +72,11 @@ enum Season02 {
         return desc;
     }
 
+    @Override
+    public String toString() {
+        return "Season02{" +
+                "name='" + name + '\'' +
+                ", desc='" + desc + '\'' +
+                '}';
+    }
 }

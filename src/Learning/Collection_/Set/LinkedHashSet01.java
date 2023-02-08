@@ -14,7 +14,7 @@ public class LinkedHashSet01 {
         //使得元素看起来是以插入顺序保持的(添加和取出顺序一样)，
         // LinkedHashSet不允许添加重复的元素
         LinkedHashSet set = new LinkedHashSet();
-        set.add(new String("AA"));
+        set.add("AA");
         set.add(8);
         set.add(456);//false
         System.out.println(set);//添加和取出顺序一致

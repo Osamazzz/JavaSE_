@@ -1,6 +1,7 @@
 package Learning.Collection_.List;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * @author Obamazzz
@@ -14,7 +15,7 @@ public class ArrayListTest01 {
         ArrayList arrayList = new ArrayList();
         arrayList.add(null);
         arrayList.add("tom");
-        arrayList.add(1,"zzz");//还可以在指定位置添加
+        arrayList.add(1, "zzz");//还可以在指定位置添加
 
         System.out.println(arrayList);
         System.out.println(arrayList.size());
@@ -24,5 +25,19 @@ public class ArrayListTest01 {
 //        会调用grow方法，第一次添加则扩容为10，再次扩容为1.5倍
 //        如果使用指定大小的构造器，则数组大小初始容量为指定大小，再次扩容为1.5倍
 
+    }
+}
+
+class Ticket {
+    public static final Object present = new Object();
+
+    public synchronized void test2() {
+
+    }
+
+    public void test() {
+        synchronized (present) {
+            //互斥
+        }
     }
 }

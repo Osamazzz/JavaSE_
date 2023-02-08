@@ -19,10 +19,14 @@ public class CQueue {
         A.addLast(value);
     }
     public int deleteHead() {
+        //B不为空，直接返回B栈顶元素
         if(!B.isEmpty()) return B.removeLast();
+        //A,B为空
         if(A.isEmpty()) return -1;
-        while(!A.isEmpty())
+        //A不空，B为空
+        while(!A.isEmpty()) {//将A中元素全部压入B栈中
             B.addLast(A.removeLast());
+        }
         return B.removeLast();
     }
 }

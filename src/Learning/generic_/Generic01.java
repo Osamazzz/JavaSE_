@@ -15,7 +15,7 @@ public class Generic01 {
         // 编译器会进行检测，如果发现添加的类型不满足要求，会报错
         // 遍历时也可以直接取出Dog，而不是Object
         // 这样既提高了安全性，又减少了类型转换的次数，提高效率
-        ArrayList<Dog> arrayList = new ArrayList<Dog>();
+        ArrayList<Dog> arrayList = new ArrayList<>();
         arrayList.add(new Dog("john", 10));
         arrayList.add(new Dog("smith", 1));
         arrayList.add(new Dog("yellow", 5));
@@ -31,7 +31,6 @@ public class Generic01 {
         for (Dog dog : arrayList) {//取出时不用向下转型，提高效率
             System.out.println(dog.getName() + "-" + dog.getAge());
         }
-
     }
 }
 

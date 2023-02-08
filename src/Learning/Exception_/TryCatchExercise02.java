@@ -22,7 +22,7 @@ public class TryCatchExercise02 {
         } catch (NullPointerException e) {
             ++i;
             System.out.println(i);
-            return i;//这里先让temp=i=3，，最后才执行return，且return的是temp
+            return i;//这里先用一个临时的变量temp=i=3，最后才执行return，且return的是temp
         } catch (ArrayIndexOutOfBoundsException e) {
             return 2;
         } finally {//先执行完finally中的语句

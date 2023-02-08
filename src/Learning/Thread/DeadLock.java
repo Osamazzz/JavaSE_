@@ -29,8 +29,8 @@ public class DeadLock {
 }
 
 class DeadLockDemo extends Thread {
-    static Object o1 = new Object();
-    static Object o2 = new Object();
+    static final Object o1 = new Object();
+    static final Object o2 = new Object();
     boolean flag;
 
     public DeadLockDemo(boolean flag) {

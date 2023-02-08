@@ -11,7 +11,7 @@ public class PrintLinkList {
     public int[] reversePrint(ListNode head) {
         ListNode p = head;
         List<Integer> arr = new ArrayList<>();
-        while(p!=null){
+        while (p != null) {
             arr.add(p.val);
             p = p.next;
         }
@@ -21,9 +21,13 @@ public class PrintLinkList {
         }
         return res;
     }
-    public class ListNode {
-     int val;
-     ListNode next;
-     ListNode(int x) { val = x; }
-  }
+
+    class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
+    }
 }

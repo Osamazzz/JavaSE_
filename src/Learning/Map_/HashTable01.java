@@ -15,7 +15,7 @@ public class HashTable01 {
         // 初始化大小为11，临界值8，threshold为0.75
         // 扩容是先变两倍再加一，即11*2+1=23
         Hashtable table = new Hashtable();
-//        table.put(null, 123);空指针异常
+//        table.put(null, 123);//空指针异常
         table.put("123", 123);
         System.out.println(table);
     }

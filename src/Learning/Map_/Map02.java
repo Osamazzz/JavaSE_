@@ -6,10 +6,11 @@ import java.util.*;
  * @author Obamazzz
  * @version 1.0
  */
+@SuppressWarnings({"ALL"})
 public class Map02 {
     public static void main(String[] args) {
         //Map遍历方式
-        HashMap map = new HashMap();
+        HashMap<String, String> map = new HashMap();
         map.put("smith", "123");
         map.put("john", "456");
         map.put("mike", "789");
@@ -58,6 +59,9 @@ public class Map02 {
             Map.Entry entry = (Map.Entry) next;
             System.out.println(entry.getKey() + "-" + entry.getValue());
         }
-
     }
+}
+
+class Test<K,V> {
+
 }

@@ -12,6 +12,7 @@ public class HashSetTest01 {
 //        底层实际上是HashMap，可以存放null，但只能有一个
 //        HashSet不保证元素是有序的，这取决于hash后，再确定索引的结果
         Set hashSet = new HashSet();
+//        Iterator iterator = hashSet.iterator();
         hashSet.add(null);
         hashSet.add(null);//再次添加null
         System.out.println(hashSet);//只有一个null,即元素不能重复
@@ -20,7 +21,7 @@ public class HashSetTest01 {
         hashSet.add(new Dog("tom"));
         hashSet.add(new Dog("tom"));//添加成功，因为是不同的对象，只是名字相同
         System.out.println(hashSet);
-        hashSet.add(new String("abc"));
+        hashSet.add("abc");
         hashSet.add(new String("abc"));//添加失败
         System.out.println(hashSet);
     }

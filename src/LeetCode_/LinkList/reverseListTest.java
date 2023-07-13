@@ -8,6 +8,19 @@ import java.util.ArrayList;
  * 定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。
  */
 public class reverseListTest {
+
+    public static void main(String[] args) {
+        String s = "lrloseumgh";
+        int k = 2;
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < s.length() - k; i++) {
+            sb.append(s.charAt(i + 2));
+        }
+        for (int i = 0; i < k; i++) {
+            sb.append(s.charAt(i));
+        }
+        System.out.println(sb);
+    }
     ListNode res;
     ListNode cur;
     public ListNode reverseList(ListNode head) {

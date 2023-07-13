@@ -18,6 +18,7 @@ public class existTest {
         //搜索完毕时仍未返回true则说明无匹配的字符单元格
         return false;
     }
+
     public boolean dfs(char[][] board, char[] word, int i, int j, int k) {
         // 如果数组越界或者字符不匹配，则返回false
         if (i >= board.length || i < 0 || j >= board[0].length ||
@@ -29,7 +30,7 @@ public class existTest {
         board[i][j] = '\0';
         //往四个方向搜索,只要有一个方向成功就行
         boolean res = dfs(board, word, i + 1, j, k + 1) || dfs(board, word, i - 1, j, k + 1)
-                   || dfs(board, word, i , j + 1, k + 1) || dfs(board, word, i, j - 1, k + 1);
+                || dfs(board, word, i, j + 1, k + 1) || dfs(board, word, i, j - 1, k + 1);
         //还原字符,回溯
         board[i][j] = word[k];
         return res;

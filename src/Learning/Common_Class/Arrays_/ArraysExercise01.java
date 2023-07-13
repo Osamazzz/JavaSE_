@@ -26,12 +26,10 @@ public class ArraysExercise01 {
             System.out.println(o);
         }
         System.out.println("==============");
-        Arrays.sort(books, new Comparator() {
+        Arrays.sort(books, new Comparator<Book_>() {
             @Override
-            public int compare(Object o1, Object o2) {
-                Book_ book1 = (Book_) o1;//前
-                Book_ book2 = (Book_) o2;//后
-                return book1.price - book2.price;//前减后大于0交换，升序
+            public int compare(Book_ o1, Book_ o2) {
+                return o1.price - o2.price;//前减后大于0交换，升序
             }
         });
         for (Object o : books){

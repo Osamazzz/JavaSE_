@@ -42,4 +42,29 @@ public class lengthOfLongestSubstringTest {
         }
         return res;
     }
+    public int maximumSwap(int num) {
+        String str = String.valueOf(num);
+        char[] chs = str.toCharArray();
+        int[] arr = new int[chs.length];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = chs[i] - '0';
+        }
+        int max = 0;
+        int maxIndex = 0;
+        for (int i = 0; i < chs.length; ++i) {
+            if (max < arr[i]) {
+                max = arr[i];
+                maxIndex = i;
+            }
+        }
+        int tmp = arr[maxIndex];
+        arr[maxIndex] = arr[0];
+        arr[0] = tmp;
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < arr.length; i++) {
+            sb.append(arr[i]);
+        }
+        String s = sb.toString();
+        return Integer.parseInt(s);
+    }
 }

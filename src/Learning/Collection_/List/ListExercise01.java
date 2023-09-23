@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class ListExercise01 {
     public static void main(String[] args) {
-        List list = new ArrayList();
+        List<myBook> list = new ArrayList<>();
         list.add(new myBook("红楼梦", "曹雪芹", 100));
         list.add(new myBook("西游记", "吴承恩", 10));
         list.add(new myBook("水浒传", "施耐庵", 9));
@@ -27,15 +27,16 @@ public class ListExercise01 {
             Object obj =  iterator.next();
             System.out.println(obj);
         }
+
     }
-    public static void sort(List list) {
+    public static void sort(List<myBook> list) {
         int size = list.size();
         for (int i = 1; i < size; i++) {
             for (int j = 0; j < size - i; j++) {
                 //取出对象,用临时变量保存
                 //向下转型
-                myBook myBook1 = (myBook) list.get(j);
-                myBook myBook2 = (myBook) list.get(j + 1);
+                myBook myBook1 = list.get(j);
+                myBook myBook2 = list.get(j + 1);
                 if (myBook1.getPrice() > myBook2.getPrice()) {
                     //使用list的set方法进行交换
                     list.set(j, myBook2);

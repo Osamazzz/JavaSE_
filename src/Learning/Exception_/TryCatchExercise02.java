@@ -8,6 +8,7 @@ public class TryCatchExercise02 {
     public static void main(String[] args) {
         System.out.println(method());
     }
+
     public static int method() {
         int i = 1;
         try {

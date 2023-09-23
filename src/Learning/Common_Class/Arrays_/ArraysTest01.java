@@ -9,6 +9,7 @@ import java.util.*;
 public class ArraysTest01 {
     public static void main(String[] args) {
         // Arrays类内包含一系列静态方法，用于管理或者操作数组
+        int[] arr23 = new int[0];
         int[] arr = {10, 2, 5};
         arr.toString();
         //Arrays类toString方法并没有重写Object的toString

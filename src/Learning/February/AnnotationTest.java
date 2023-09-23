@@ -1,5 +1,7 @@
 package Learning.February;
 
+import org.junit.Test;
+
 /**
  * @author Obamazzz
  * @version 1.0
@@ -8,6 +10,11 @@ public class AnnotationTest {
     public static void main(String[] args) {
         Student student = new Student();
         student.run();
+    }
+
+    @Test
+    public void say() {
+        System.out.println("人可以说话");
     }
 }
 

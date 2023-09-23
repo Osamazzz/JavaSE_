@@ -1,6 +1,7 @@
 package Learning.Map_;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Obamazzz
@@ -18,5 +19,18 @@ public class HashMap01 {
         hashMap.put("php", 456);
         hashMap.put("java", 456);
         System.out.println(hashMap);
+
+        Animal animal = new Cat();
+        if (animal instanceof Animal) {
+            System.out.printf("123");
+        }
     }
+}
+
+class Animal {
+
+}
+
+class Cat extends Animal {
+
 }

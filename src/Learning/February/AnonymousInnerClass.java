@@ -13,6 +13,7 @@ public class AnonymousInnerClass {
            }
         );
     }
+
     public static void f1(IA ia) {
         ia.cry();
     }
@@ -20,12 +21,14 @@ public class AnonymousInnerClass {
 
 class Outer04 {
     private int n1 = 10;
+
     public void method() {
         //基于接口的匿名内部类
         //tiger编译类型为IA接口
         //运行类型为这个匿名内部类Outer04$1
         IA tiger = new IA() {
             int abc = 10;
+
             @Override
             public void cry() {
                 System.out.println("cry!!" + abc);
@@ -61,9 +64,11 @@ interface IA {
 
 class Father {
     private String name;
+
     public Father(String name) {
         this.name = name;
     }
+
     public void test() {
 
     }

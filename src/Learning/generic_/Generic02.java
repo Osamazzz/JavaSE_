@@ -14,7 +14,7 @@ public class Generic02 {
         // 运行时就不会产生类型转换异常.提高了代码的健壮性
         // 对于arraylist-> public class ArrayList<E> {}，E为泛型
         // 下面相当于把Animal赋给了E
-        ArrayList <Animal> arrayList = new ArrayList<>();
+        ArrayList <Animal<?>> arrayList = new ArrayList<>();
         Animal<String> abc = new Animal<>("abc");
         abc.f();
         // 可以用下面这么理解Animal

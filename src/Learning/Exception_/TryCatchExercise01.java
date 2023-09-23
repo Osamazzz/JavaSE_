@@ -13,7 +13,7 @@ public class TryCatchExercise01 {
         while (true) {
             System.out.println("请输入一个整数:");
             try {
-                inInt = Integer.parseInt(in.next());//这里可能出现异常
+                inInt = Integer.parseInt(in.nextLine());//这里可能出现异常
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("输入错误,请重新输入!");

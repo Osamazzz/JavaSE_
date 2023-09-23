@@ -27,9 +27,10 @@ public class Collections01 {
             @Override
             public int compare(String o1, String o2) {
                 //
-                return ((String) o1).length() - ((String) o2).length();
+                return o1.length() - o2.length();
             }
         });
+        System.out.println(list);
         Collections.swap(list, 0, 1);//交换
         System.out.println(list);
         Collections.max(list, new Comparator<String>() {
@@ -45,7 +46,6 @@ public class Collections01 {
         Collections.copy(des, list);//拷贝，新集合size要比旧的大
         //把所有123换成hhh
         Collections.replaceAll(des, "123", "hhh");
-        System.out.println(des
-        );
+        System.out.println(des);
     }
 }

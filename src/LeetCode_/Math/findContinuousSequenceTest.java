@@ -12,6 +12,7 @@ import java.util.List;
 public class findContinuousSequenceTest {
     public static void main(String[] args) {
         List<ArrayList<Integer>> list = new ArrayList<>();
+
         int[][] arr = {{1, 2, 3}, {4, 5}};
         for (int i = 0; i < arr.length; i++) {
             ArrayList<Integer> tmp = new ArrayList<>();
@@ -20,6 +21,7 @@ public class findContinuousSequenceTest {
             }
             list.add(tmp);
         }
+
         int[][] arr2 = new int[list.size()][];
         for (int i = 0; i < list.size(); i++) {
             arr2[i] = new int[list.get(i).size()];
@@ -27,6 +29,7 @@ public class findContinuousSequenceTest {
                 arr2[i][j] = list.get(i).get(j);
             }
         }
+
         int[][] res = findContinuousSequence2(98160);
         for (int i = 0; i < res.length; i++) {
             for (int j = 0; j < res[i].length; j++) {

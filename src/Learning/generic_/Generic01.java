@@ -35,6 +35,7 @@ public class Generic01 {
 }
 
 class Dog {
+
     private String name;
     private int age;
 

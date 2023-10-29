@@ -2,10 +2,7 @@ package Learning.File;
 
 import org.junit.Test;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Properties;
 
 public class propertiesTest {
@@ -41,6 +38,33 @@ public class propertiesTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Test
+    public void test02() {
+        // 使用properties来配置文件
+        Properties properties = new Properties();
+
+        // 创建
+        properties.setProperty("charset", "utf-8");
+        properties.setProperty("user", "tom");
+        properties.setProperty("pwd", "abc123");
+
+        // 将k-v存储到文件中即可
+        try {
+            properties.store(new FileOutputStream("src\\learning\\File\\mysql2.properties"), "hello");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("保存成功");
+        // 修改
+        properties.setProperty("pwd", "1234560");
+        try {
+            properties.store(new FileOutputStream("src\\learning\\File\\mysql2.properties"), "hello");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("修改成功");
     }
 
 }
